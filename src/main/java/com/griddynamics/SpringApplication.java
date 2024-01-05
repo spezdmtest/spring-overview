@@ -1,13 +1,15 @@
 package com.griddynamics;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  * Hello world!
  *
  */
-public class App 
+public class SpringApplication
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
     }
 }
