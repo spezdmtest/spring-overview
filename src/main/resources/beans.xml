@@ -5,5 +5,13 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--  Создание класса-фабрики через конструктор  -->
-    <bean id="stationFactory" class="com.griddynamics.ElectricityStation"/>
+<!--    <bean id="stationFactory" class="com.griddynamics.ElectricityStation"/>-->
+
+<!--    &lt;!&ndash;  Создание через статический метод-фабрику&ndash;&gt;-->
+<!--    <bean id="waterpumpStation"-->
+<!--          class="com.griddynamics.WaterPumpStation"-->
+<!--          factory-method="getInstance"/>-->
+    <bean id="stationFactory" class="com.griddynamics.StationFactory"/>
+    <bean id="electricityStation" factory-bean="stationFactory" factory-method="createElectricityStation"/>
+    <bean id="waterPumpStation" factory-bean="stationFactory" factory-method="createWaterPumpStation"/>
 </beans>
