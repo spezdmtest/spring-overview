@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config/>
+    <bean id="electricityStation" class="com.griddynamics.Annotations.station.ElectricityStation"/>
+    <bean id="waterPumpStation" class="com.griddynamics.Annotations.station.WaterPumpStation">
+        <constructor-arg type="java.lang.String" index="0" value="District #13 Waterpump Station"/>
+        <constructor-arg type="int" index="1" value="1000"/>
+        <constructor-arg type="int" index="2" value="4"/>
+    </bean>
+    <bean id="depot" class="com.griddynamics.Annotations.station.railway.Depot"/>
+    <bean id="railwayStation" class="com.griddynamics.Annotations.station.railway.RailwayStation"/>
 
+    <bean id="fuelTank" class="com.griddynamics.Annotations.station.petrol.FuelTank"/>
+    <bean id="fuelPump" class="com.griddynamics.Annotations.station.petrol.FuelPump"/>
+    <bean id="petrolStation" class="com.griddynamics.Annotations.station.petrol.PetrolStation"/>
+
+    <bean id="tunnelLane" class="com.griddynamics.Annotations.infrastructured.TunnelLane"/>
+    <bean id="tunnel" class="com.griddynamics.Annotations.infrastructured.Tunnel"/>
+
+    <bean id="metroLane" class="com.griddynamics.Annotations.infrastructured.MetroLane"/>
+    <bean id="metro" class="com.griddynamics.Annotations.infrastructured.Metro"/>
+
+    <bean id="districtSystem" class="com.griddynamics.Annotations.DistrictSystem"/>
     <!--  Создание класса-фабрики через конструктор  -->
     <!--    <bean id="stationFactory" class="com.griddynamics.ElectricityStation"/>-->
 
@@ -31,13 +52,13 @@
     <!--        <constructor-arg index="2" value="4"/>-->
     <!--    </bean>-->
 
-    <bean id="waterPumpStation" class="com.griddynamics.WaterPumpStation">
-        <constructor-arg type="int" index="1" value="1000"/>
-        <constructor-arg type="java.lang.String" value="District #13 WaterPump Station"/>
-        <constructor-arg type="int" index="2" value="4"/>
-    </bean>
+    <!--    <bean id="waterPumpStation" class="com.griddynamics.WaterPumpStation">-->
+    <!--        <constructor-arg type="int" index="1" value="1000"/>-->
+    <!--        <constructor-arg type="java.lang.String" value="District #13 WaterPump Station"/>-->
+    <!--        <constructor-arg type="int" index="2" value="4"/>-->
+    <!--    </bean>-->
 
-    <bean id="electricityStation" class="com.griddynamics.ElectricityStation"/>
+    <!--    <bean id="electricityStation" class="com.griddynamics.ElectricityStation"/>-->
     <!-- Создание компонентов (бина) и внедрение зависимостей при помощи конструктора -->
     <!--    <bean id="districtSystem" class="com.griddynamics.DistrictSystem">-->
     <!--        <constructor-arg ref="waterPumpStation"/>-->
@@ -45,8 +66,8 @@
     <!--    </bean>-->
 
     <!-- Создание компонентов (бина) и внедрение зависимостей при помощи конструктора и сеттера-->
-    <bean id="districtSystem" class="com.griddynamics.DistrictSystem">
-        <property name="waterPumpStation" ref="waterPumpStation"/>
-        <constructor-arg ref="electricityStation"/>
-    </bean>
+    <!--    <bean id="districtSystem" class="com.griddynamics.DistrictSystem">-->
+    <!--        <property name="waterPumpStation" ref="waterPumpStation"/>-->
+    <!--        <constructor-arg ref="electricityStation"/>-->
+    <!--    </bean>-->
 </beans>

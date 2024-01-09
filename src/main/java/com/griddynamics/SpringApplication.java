@@ -1,5 +1,6 @@
 package com.griddynamics;
 
+import com.griddynamics.Annotations.DistrictSystem;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -18,6 +19,9 @@ public class SpringApplication
 //
 //        WaterPumpStation waterPumpStation = context.getBean(WaterPumpStation.class);
 //        System.out.println(waterPumpStation);
+//        DistrictSystem districtSystem = context.getBean(DistrictSystem.class);
+//        System.out.println(districtSystem);
+
         DistrictSystem districtSystem = context.getBean(DistrictSystem.class);
         System.out.println(districtSystem);
     }
