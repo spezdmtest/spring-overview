@@ -5,13 +5,48 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--  Создание класса-фабрики через конструктор  -->
-<!--    <bean id="stationFactory" class="com.griddynamics.ElectricityStation"/>-->
+    <!--    <bean id="stationFactory" class="com.griddynamics.ElectricityStation"/>-->
 
-<!--    &lt;!&ndash;  Создание через статический метод-фабрику&ndash;&gt;-->
-<!--    <bean id="waterpumpStation"-->
-<!--          class="com.griddynamics.WaterPumpStation"-->
-<!--          factory-method="getInstance"/>-->
-    <bean id="stationFactory" class="com.griddynamics.StationFactory"/>
-    <bean id="electricityStation" factory-bean="stationFactory" factory-method="createElectricityStation"/>
-    <bean id="waterPumpStation" factory-bean="stationFactory" factory-method="createWaterPumpStation"/>
+    <!--     Создание через статический метод-фабрику-->
+    <!--    <bean id="waterpumpStation"-->
+    <!--          class="com.griddynamics.WaterPumpStation"-->
+    <!--          factory-method="getInstance"/>-->
+
+    <!--  Создание через класс-фабрику  -->
+    <!--    <bean id="stationFactory" class="com.griddynamics.StationFactory"/>-->
+    <!--    <bean id="electricityStation" factory-bean="stationFactory" factory-method="createElectricityStation"/>-->
+    <!--    <bean id="waterPumpStation" factory-bean="stationFactory" factory-method="createWaterPumpStation"/>-->
+
+    <!--    <bean id="waterPumpStation" class="com.griddynamics.WaterPumpStation"/>-->
+    <!--    <bean id="waterPumpStation" class="com.griddynamics.WaterPumpStation">-->
+    <!--        <constructor-arg name = "capacity" value="1000"/>-->
+    <!--        <constructor-arg name = "name" value="District #13 WaterPump Station"/>-->
+    <!--        <constructor-arg name = "pumpQuantity" value="4"/>-->
+    <!--    </bean>-->
+    <!--    -->
+
+    <!--    <bean id="waterPumpStation" class="com.griddynamics.WaterPumpStation">-->
+    <!--        <constructor-arg index="1" value="1000"/>-->
+    <!--        <constructor-arg index="0" value="District #13 WaterPump Station"/>-->
+    <!--        <constructor-arg index="2" value="4"/>-->
+    <!--    </bean>-->
+
+    <bean id="waterPumpStation" class="com.griddynamics.WaterPumpStation">
+        <constructor-arg type="int" index="1" value="1000"/>
+        <constructor-arg type="java.lang.String" value="District #13 WaterPump Station"/>
+        <constructor-arg type="int" index="2" value="4"/>
+    </bean>
+
+    <bean id="electricityStation" class="com.griddynamics.ElectricityStation"/>
+    <!-- Создание компонентов (бина) и внедрение зависимостей при помощи конструктора -->
+    <!--    <bean id="districtSystem" class="com.griddynamics.DistrictSystem">-->
+    <!--        <constructor-arg ref="waterPumpStation"/>-->
+    <!--        <constructor-arg ref="electricityStation"/>-->
+    <!--    </bean>-->
+
+    <!-- Создание компонентов (бина) и внедрение зависимостей при помощи конструктора и сеттера-->
+    <bean id="districtSystem" class="com.griddynamics.DistrictSystem">
+        <property name="waterPumpStation" ref="waterPumpStation"/>
+        <constructor-arg ref="electricityStation"/>
+    </bean>
 </beans>

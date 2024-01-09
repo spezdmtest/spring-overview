@@ -9,7 +9,10 @@ public class StationFactory {
         return new ElectricityStation();
     }
 
+//    public WaterPumpStation createWaterPumpStation() {
+//        return WaterPumpStation.getInstance();
+//    }
     public WaterPumpStation createWaterPumpStation() {
-        return WaterPumpStation.getInstance();
+        return new WaterPumpStation() ;
     }
 }
