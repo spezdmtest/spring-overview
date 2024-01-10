@@ -6,7 +6,6 @@
     <bean id="robotFactory" class="com.griddynamics.RobotFactory"/>
 
     <bean id="robot"
-          scope="prototype"
           factory-bean="robotFactory"
           factory-method="create"/>
 </beans>
