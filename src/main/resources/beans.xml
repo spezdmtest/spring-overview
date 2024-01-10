@@ -18,7 +18,7 @@
     <bean id="fuelPump" class="com.griddynamics.Annotations.station.petrol.FuelPump"/>
     <bean id="petrolStation" class="com.griddynamics.Annotations.station.petrol.PetrolStation"/>
 
-    <bean id="tunnelLane" class="com.griddynamics.Annotations.infrastructured.TunnelLane"/>
+<!--    <bean id="tunnelLane" class="com.griddynamics.Annotations.infrastructured.TunnelLane"/>-->
     <bean id="tunnel" class="com.griddynamics.Annotations.infrastructured.Tunnel"/>
 
     <bean id="metroLane" class="com.griddynamics.Annotations.infrastructured.MetroLane"/>
