@@ -7,7 +7,7 @@
         <version>0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>spring_overview_scope_prototype</artifactId>
+    <artifactId>spring_overview_scope_prototype_xml</artifactId>
     <packaging>jar</packaging>
 
     <name>spring_overview_scope_prototype</name>
@@ -18,11 +18,5 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 </project>
