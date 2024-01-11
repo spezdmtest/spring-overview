@@ -12,6 +12,7 @@
     <modules>
         <module>spring_overview_scope_annotation_configuration</module>
         <module>spring_overview_scope_prototype</module>
+        <module>spring_overview_troubleshooting</module>
     </modules>
 
     <properties>
@@ -31,12 +32,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${org.springframework.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

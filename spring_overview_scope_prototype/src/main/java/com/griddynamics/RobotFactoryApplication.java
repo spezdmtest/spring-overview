@@ -3,7 +3,7 @@ package com.griddynamics;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class SpringApplication
+public class RobotFactoryApplication
 {
     public static void main( String[] args )
     {
